@@ -18,6 +18,7 @@ print(torch.__version__, torchvision.__version__)
 from utils import label_to_onehot, cross_entropy_for_onehot
 
 # main.py
+#ok
 from agem import AGEM
 
 
@@ -43,7 +44,7 @@ tt = transforms.ToPILImage()
 
 img_index = args.index
 img_index = min(img_index, len(dst) - 1)
-gt_data = tp(dst[img_index][0]).to(device)
+gt_data = tp(np.array(dst[img_index][0])).to(device)
 
 if len(args.image) > 1:
     gt_data = Image.open(args.image)
